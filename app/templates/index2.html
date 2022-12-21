@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Temperature Data</h1>
+
+
+<div class="container">
+  <div class="temp">
+    {% for temp in temps %}
+    
+      <div class="col-sm-4">
+        <div class="card">
+          <h5 class="card-title">Sensor: {{ temp[2] }}</h5>
+          <p class="card-text">Temperature: {{ temp[3] }}</p>
+          <p class="card-text">Humidity: {{ temp[4] }}</p>
+          <p class="card-text">Date: {{ temp[0] }}</p>
+          <p class="card-text">Time: {{ temp[1] }}</p>          
+        </div>
+      </div>
+    {% endfor %}
+
+{% endblock %}

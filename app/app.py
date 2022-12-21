@@ -13,6 +13,6 @@ def get_db_connection():
 @app.route('/')
 def index():
     conn = get_db_connection()
-    temp = conn.execute('SELECT * FROM temp').fetchall()
+    temp = conn.execute('SELECT * FROM temp ORDER BY Date DESC, Time DESC LIMIT 4').fetchall()
     conn.close()
-    return render_template('index.html', temps=temp)
+    return render_template('index2.html', temps=temp)
